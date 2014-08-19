@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size">40sp</dimen>
+     <dimen name="text_size_1">20sp</dimen>
+    <dimen name="activity_horizontal_margin">120dp</dimen>
+    <dimen name="activity_vertical_margin">120dp</dimen>
+     <dimen name="start_image_horizontal_margin">120dp</dimen>
+      <dimen name="start_image_vertical_margin">40dp</dimen>
+      <dimen name="padding10dp">20dp</dimen>
+      <dimen name="padding5dp">10dp</dimen>
+      <dimen name="padding50dp">100dp</dimen>
+    
+    
+</resources>

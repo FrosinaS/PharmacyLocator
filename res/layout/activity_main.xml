@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:src="@drawable/pharmacy"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+       android:padding="@dimen/padding10dp"
+       android:contentDescription="@null"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical" 
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/padding10dp"
+        android:paddingRight="@dimen/padding10dp"
+        android:gravity="center"
+        >
+
+        	<Button
+			        android:id="@+id/pharmaciesMap"
+			        android:layout_width="fill_parent"
+			        android:layout_height="0dp"
+           			 android:layout_weight="1"
+			        android:text="@string/show_map_text" 
+			        android:textColor="@color/dark_green"
+           			android:background="@color/carbon_grey" 
+			        android:layout_margin="@dimen/padding5dp"
+			         android:textSize="@dimen/text_size"/>
+         <Button
+             android:id="@+id/searchPharmacy"
+             android:layout_width="fill_parent"
+             android:layout_height="0dp"
+            android:layout_weight="1"
+             android:text="@string/search_by_name" 
+             android:textColor="@color/dark_green"
+            android:background="@color/carbon_grey" 
+             android:layout_margin="@dimen/padding5dp"
+              android:textSize="@dimen/text_size"/>
+
+			    <Button
+			        android:id="@+id/searchNearby"
+			        android:layout_width="fill_parent"
+			        android:layout_height="0dp"
+            		android:layout_weight="1"
+			        android:text="@string/search_nearby"
+			        android:textColor="@color/dark_green"
+            		android:background="@color/carbon_grey" 
+			        android:layout_margin="@dimen/padding5dp" 
+			         android:textSize="@dimen/text_size"/>
+			
+			    <Button
+			        android:id="@+id/drugsButton"
+			        android:layout_width="fill_parent"
+			        android:layout_height="0dp"
+           			 android:layout_weight="1"
+			        android:text="@string/drugs_button_text" 
+			        android:textColor="@color/dark_green"
+           			android:background="@color/carbon_grey" 
+			        android:layout_margin="@dimen/padding5dp"
+			         android:textSize="@dimen/text_size"/>
+
+    </LinearLayout>
+
+   
+    
+</LinearLayout>

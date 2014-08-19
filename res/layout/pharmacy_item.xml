@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+     android:background="@color/carbon_grey"
+   >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" 
+        >
+        
+        <TextView
+        android:id="@+id/pharmacy_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding10dp"
+        android:layout_weight="3"
+        android:textColor="@color/dark_green"
+         />
+        
+        <TextView
+        android:id="@+id/km_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/padding10dp"
+       android:textColor="@color/red"
+       android:gravity="right"
+       
+       
+         />
+    </LinearLayout>
+
+    
+
+    <TextView
+        android:id="@+id/pharmacy_adress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding10dp"
+        android:paddingRight="@dimen/padding10dp"
+        android:textColor="@color/dark_green"
+        
+         />
+
+</LinearLayout>

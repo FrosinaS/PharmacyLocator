@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	     android:background="@color/carbon_grey" 
+	    >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/pharmacy_info_name"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+         android:padding="@dimen/padding5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:textColor="@color/dark_green"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call_pharmacy" 
+        android:enabled="false"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:padding="@dimen/padding5dp"
+        android:text="@string/pharmacy_adress_text" />
+
+    <TextView
+        android:id="@+id/pharmacy_info_address"
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+         android:padding="@dimen/padding5dp"
+         android:textSize="@dimen/text_size_1"
+         android:textColor="@color/dark_green"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+         android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+         android:padding="@dimen/padding5dp"
+        android:text="@string/pharmacy_city_text" />
+
+    <TextView
+        android:id="@+id/pharmacy_info_city"
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+         android:padding="@dimen/padding5dp"
+         android:textSize="@dimen/text_size_1"
+         android:textColor="@color/dark_green"
+        />
+
+    <TextView
+        android:id="@+id/textView6"
+         android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+         android:padding="@dimen/padding5dp"
+        android:text="@string/pharmacy_telephone_text" />
+
+    <TextView
+        android:id="@+id/pharmacy_info_phone"
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/padding5dp"
+        android:textSize="@dimen/text_size_1"
+        android:textColor="@color/dark_green"
+        />
+
+    <TextView
+        android:id="@+id/textView8"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:padding="@dimen/padding5dp"
+        android:text="@string/pharmacy_map_text" />
+
+    <fragment 
+		  android:id="@+id/map_view"
+		  android:name="com.google.android.gms.maps.SupportMapFragment"
+		 android:layout_weight="5"
+		  android:layout_width="fill_parent"
+		  android:layout_height="0dp" />
+
+</LinearLayout>
