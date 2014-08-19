@@ -66,9 +66,8 @@
            			android:background="@color/carbon_grey" 
 			        android:layout_margin="@dimen/padding5dp"
 			         android:textSize="@dimen/text_size"/>
+			     
 
     </LinearLayout>
 
-   
-    
 </LinearLayout>

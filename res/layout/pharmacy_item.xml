@@ -20,7 +20,16 @@
         android:layout_weight="3"
         android:textColor="@color/dark_green"
          />
-        
+        <LinearLayout
+           android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/imgthing" 
+            android:layout_gravity="center_vertical"/>
         <TextView
         android:id="@+id/km_away"
         android:layout_width="0dp"
@@ -29,9 +38,9 @@
         android:padding="@dimen/padding10dp"
        android:textColor="@color/red"
        android:gravity="right"
-       
-       
          />
+        </LinearLayout>
+        
     </LinearLayout>
 
     

@@ -1,10 +1,14 @@
 package mk.finki.ukim.jmm.pharmacylocator;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.TextView;
 
 public class DrugItemInfo extends Fragment {
@@ -23,6 +27,7 @@ public class DrugItemInfo extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 	}
 
 	@Override
@@ -30,7 +35,8 @@ public class DrugItemInfo extends Fragment {
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.drug_info_layout, container,
 				false);
-
+		
+		
 		TextView drugName = (TextView) view
 				.findViewById(R.id.drug_name_text_view);
 		TextView drugLatinName = (TextView) view

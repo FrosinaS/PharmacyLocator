@@ -16,6 +16,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -27,11 +29,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.ProgressDialog;
+import android.app.TaskStackBuilder;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class PharmaciesMap extends FragmentActivity {
@@ -39,16 +45,20 @@ public class PharmaciesMap extends FragmentActivity {
 	ArrayList<Pharmacy> pharm;
 	Location location1;
 	ProgressDialog dialog;
-
+Button retryButton;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pharmacies_map);
 		
 		
 		if(savedInstanceState==null){
-			PharmacyList task = new PharmacyList();
 			pharm = new ArrayList<Pharmacy>();
 			location1 = new Location("Map");
+			AdView adView=(AdView)findViewById(R.id.adView1);
+			AdRequest request=new AdRequest.Builder().build();
+			adView.loadAd(request);
+			retryButton=(Button)findViewById(R.id.retry_button);
+			retryButton.setOnClickListener(retryButtonOnClick);
 			GPSTracker gps = new GPSTracker(getApplicationContext());
 			if (gps.canGetLocation) {
 				location1.setLatitude(gps.latitude);
@@ -56,14 +66,41 @@ public class PharmaciesMap extends FragmentActivity {
 				gps.stopUsingGPS();
 			}
 			
+			
 		dialog = new ProgressDialog(PharmaciesMap.this);
 		dialog.setCancelable(false);
 		dialog.setMessage("Searching for pharmacies...");
 		dialog.isIndeterminate();
 
-		task.execute();
+		findPharmacies();
 		
-		MapsInitializer.initialize(getApplicationContext());
+		
+		}
+
+		
+	}
+	private OnClickListener retryButtonOnClick=new OnClickListener(){
+
+		@Override
+		public void onClick(View v) {
+			GPSTracker gps = new GPSTracker(getApplicationContext());
+			if (gps.canGetLocation) {
+				location1.setLatitude(gps.latitude);
+				location1.setLongitude(gps.longitude);
+				gps.stopUsingGPS();
+			}
+			findPharmacies();
+			
+		}
+    	
+    	
+    };
+    public void findPharmacies()
+    {
+    	
+    	PharmacyList task = new PharmacyList();
+    	task.execute();
+    	MapsInitializer.initialize(getApplicationContext());
 		switch (GooglePlayServicesUtil
 				.isGooglePlayServicesAvailable(getApplicationContext())) {
 
@@ -102,10 +139,7 @@ public class PharmaciesMap extends FragmentActivity {
 									.isGooglePlayServicesAvailable(getApplicationContext()));
 		}
 
-		}
-
-		
-	}
+    }
 
 	@Override
 	protected void onStop() {
@@ -169,10 +203,12 @@ public class PharmaciesMap extends FragmentActivity {
 										.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
 
 			}
+			retryButton.setVisibility(View.INVISIBLE);
 			}
 			else
 			{
 				Toast.makeText(PharmaciesMap.this, "No pharmacies found. Check if your internet connection and your GPS are on!", Toast.LENGTH_LONG).show();
+				retryButton.setVisibility(View.VISIBLE);
 			}
 
 		}

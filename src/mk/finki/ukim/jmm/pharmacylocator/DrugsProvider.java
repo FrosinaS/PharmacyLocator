@@ -77,13 +77,9 @@ public class DrugsProvider extends ContentProvider{
 		  Context context = getContext();
 	      DatabaseHelper dbHelper = new DatabaseHelper(context);
 	      db = dbHelper.getWritableDatabase();
-	       db.delete(DRUGS_TABLE_NAME, null, null);
-	       Intent intent=new Intent();
-		      intent.setAction("mk.finki.ukim.jmm.pharmacylocator.startdatatransfer");
-		      getContext().sendBroadcast(intent);
+	      db.delete(DRUGS_TABLE_NAME, null, null);
+	      context.startService(new Intent(context, FillProviderService.class));
 	      return (db == null)? false:true;
-	      
-		
 	}
 
 	@Override

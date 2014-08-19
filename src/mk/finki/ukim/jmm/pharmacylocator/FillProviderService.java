@@ -19,6 +19,7 @@ import android.os.IBinder;
 public class FillProviderService extends Service{
 
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onStart(Intent intent, int startId) {
 		// TODO Auto-generated method stub

@@ -16,6 +16,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -45,7 +48,6 @@ public class GlobalView extends Activity {
 	public static ArrayList<Pharmacy> pharmaciesList;
 	public static PharmacyAdapter pharmacyAdapter;
 	public static Button retryButton;
-	public static View visible;
 	// /GetPharmacies task;
 
 	@Override
@@ -60,9 +62,12 @@ public class GlobalView extends Activity {
 		super.onCreate(savedInstanceState);
 		Intent newView = getIntent();
 		setContentView(R.layout.global_view);
+		
+		AdView adView=(AdView)findViewById(R.id.adView);
+		AdRequest request=new AdRequest.Builder().build();
+		adView.loadAd(request);
 		// task = new GetPharmacies();
 		retryButton=(Button)findViewById(R.id.retry_button);
-		visible=(View)findViewById(R.id.retry_layout);
 		retryButton.setOnClickListener(retryButtonOnClick);
 		String typeFragment = newView.getStringExtra("FRAGMENT_TYPE");
 		if (savedInstanceState == null) {

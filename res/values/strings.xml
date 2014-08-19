@@ -11,7 +11,7 @@
     <string name="search_button">Search pharmacie</string>
     <string name="locate_nearest">Locate nearest pharmacie</string>
     <string name="list_pharmacies">List all pharmacies</string>
-    <string name="find_location">Find location</string>
+    <string name="find_location">Choose location</string>
     <string name="your_location_string">Search nearby your location</string>
     <string name="search_nearby">Nearby</string>
     <string name="search_by_name">Search</string>

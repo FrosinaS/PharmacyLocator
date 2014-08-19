@@ -1,6 +1,9 @@
 package mk.finki.ukim.jmm.pharmacylocator;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -15,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
 	
 
 	Button listAllPharmacies, searchNearest, searchPharmacy, drugsList, aboutAuthor, pharmaciesMap;
+	AdView adView;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
         if(savedInstanceState == null){
            
             }
+         
         
         
         searchPharmacy=(Button)findViewById(R.id.searchPharmacy);
@@ -115,7 +120,6 @@ public class MainActivity extends ActionBarActivity {
       
       pharmaciesMap=(Button)findViewById(R.id.pharmaciesMap);
       pharmaciesMap.setOnClickListener(pharmaciesMapOnClick);
-
 	}
 }
 

@@ -76,7 +76,7 @@ public class SearchPharmaciesService extends Service {
 
 			}
 			if(pharmacies != null){
-				GlobalView.visible.setVisibility(View.INVISIBLE);
+				GlobalView.retryButton.setVisibility(View.INVISIBLE);
 			GlobalView.pharmaciesList.clear();
 			GlobalView.pharmaciesList.addAll(pharmacies);
 			GlobalView.pharmacyAdapter.notifyDataSetChanged();
@@ -105,7 +105,7 @@ public class SearchPharmaciesService extends Service {
 			else
 			{
 				Toast.makeText(getApplicationContext(),"Check if your internet connection and your GPS are on!", Toast.LENGTH_LONG).show();
-				GlobalView.visible.setVisibility(View.VISIBLE);
+				GlobalView.retryButton.setVisibility(View.VISIBLE);
 			}
 		}
 
